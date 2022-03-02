@@ -15,16 +15,8 @@ tweet_left_list = []
 tweet_right_list = []
 
 # Firebase config
-config = {
-    "apiKey": "AIzaSyB2c1Vd9lYzfbH4HMyM6wKAKqLRippKPes",
-    "authDomain": "twitterbutunbiased.firebaseapp.com",
-    "databaseURL": "https://twitterbutunbiased-default-rtdb.firebaseio.com/",
-    "projectId": "twitterbutunbiased",
-    "storageBucket": "twitterbutunbiased.appspot.com",
-    "messagingSenderId": "509399748406",
-    "appId": "1:509399748406:web:92b4b3e0ac11c2c32ced97",
-    "measurementId": "G-RJ283WNDDM"
-}
+with open("firebase_credentials.json", "r") as file:
+    config = json.load(file)
 
 firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
